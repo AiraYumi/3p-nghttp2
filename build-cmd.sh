@@ -137,6 +137,9 @@ pushd "$top/nghttp2"
             fi
 
             # Release configure and build
+            autoreconf -i
+            automake
+            autoconf
             ./configure --enable-lib-only CFLAGS="$opts" CXXFLAGS="$opts"
             make
             make check
